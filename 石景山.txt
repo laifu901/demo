@@ -1,0 +1,15 @@
+INSERT INTO [sys_page]([uuid], [name], [sys_code], [m_b_code], [parent_code], [type], [sort], [page_url], [normal_icon], [move_icon]) VALUES ('23320', '护理部查询统计', '33', '23318', '-1', 0, 8, '#/main/reportStatistic4', '08', NULL);
+INSERT INTO [sys_page]([uuid], [name], [sys_code], [m_b_code], [parent_code], [type], [sort], [page_url], [normal_icon], [move_icon]) VALUES ('23321', '药剂科查询统计', '33', '23318', '-1', 0, 8, '#/main/reportStatistic15', '08', NULL);
+INSERT INTO [sys_page]([uuid], [name], [sys_code], [m_b_code], [parent_code], [type], [sort], [page_url], [normal_icon], [move_icon]) VALUES ('23322', '器械科查询统计', '33', '23318', '-1', 0, 8, '#/main/reportStatistic6', '08', NULL);
+
+执行一下这个脚本
+INSERT INTO [dbo].[sys_role_page]
+([uuid], [page_code], [role_code], [created_time], [created_user], [modify_time], [modify_user], [delete_flag]) VALUES 
+('b44aeddeee1', '23320', '4', '2018-09-27 14:58:48.983', '管理员', '2018-09-27 14:58:48.983', '管理员', 0);
+
+INSERT INTO [dbo].[sys_role_page]
+([uuid], [page_code], [role_code], [created_time], [created_user], [modify_time], [modify_user], [delete_flag]) VALUES 
+('b44aeddeee2', '23321', '4', '2018-09-27 14:58:48.983', '管理员', '2018-09-27 14:58:48.983', '管理员', 0);
+INSERT INTO [dbo].[sys_role_page]
+([uuid], [page_code], [role_code], [created_time], [created_user], [modify_time], [modify_user], [delete_flag]) VALUES 
+('b44aeddeee3', '23322', '4', '2018-09-27 14:58:48.983', '管理员', '2018-09-27 14:58:48.983', '管理员', 0);

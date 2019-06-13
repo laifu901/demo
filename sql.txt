@@ -1,0 +1,19 @@
+DECLARE @sql_str VARCHAR(8000)
+DECLARE @sql_col VARCHAR(8000)
+SELECT @sql_col =(select stuff((select ',['+bbb.selectMonth+']' from (
+			select convert(varchar(7),DATEADD(month,number,'2019-1-1') ,120) AS selectMonth
+			from master.dbo.spt_values
+			where type='p' AND number<=DATEDIFF(month,'2019-1-1','2019-3-1')
+	) as bbb for xml path('')),1,1,''))
+PRINT (@sql_col)
+SET @sql_str = '
+select
+   *
+from view_adverse as  t1
+pivot (sum(t1.count) for t1.createMonth in(
+	-- [201901],[201902],[201903]
+	'+@sql_col+'
+	
+)) as t2'
+PRINT (@sql_str)
+EXEC (@sql_str)
